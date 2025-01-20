@@ -61,5 +61,13 @@ public class CartService {
         }
         cartRepository.deleteById(cartId);
     }
+    
+    public void deleteAllCartsByCustomerId(Long customerId) {
+        List<Cart> carts = cartRepository.findByCustomerCustomerId(customerId);
+        if (carts.isEmpty()) {
+            throw new RuntimeException("No cart items found for the customer");
+        }
+        cartRepository.deleteAll(carts);
+    }
 }
 

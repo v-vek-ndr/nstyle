@@ -74,5 +74,21 @@ public class CartController {
             ));
         }
     }
+    
+    @DeleteMapping("/all/{customerId}")
+    public ResponseEntity<?> deleteAllCartsByCustomerId(@PathVariable Long customerId) {
+        try {
+            cartService.deleteAllCartsByCustomerId(customerId);
+            return ResponseEntity.ok().body(Map.of(
+                "message", "All cart items deleted successfully",
+                "result", true
+            ));
+        } catch (RuntimeException e) {
+            return ResponseEntity.badRequest().body(Map.of(
+                "message", e.getMessage(),
+                "result", false
+            ));
+        }
+    }
 }
 

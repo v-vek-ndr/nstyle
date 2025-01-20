@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.nstyleintl.nstyle.dto.ServicesSubCategoryDTO;
-import com.nstyleintl.nstyle.model.ServicesSubCategory;
 import com.nstyleintl.nstyle.service.ServicesSubCategoryService;
 
 import lombok.AllArgsConstructor;
